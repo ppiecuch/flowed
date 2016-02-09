@@ -12,3 +12,7 @@ statically. Fortran compiler is required to compile akima. There’s also a Mac 
 in the releases section on GitHub:
 <a href="https://github.com/sadaszewski/flowed/releases" target="_blank">here</a>.
 Hope you enjoy and maybe develop it further.
+
+09/02/2016 ========================
+nn-c and c++ conversion of akima library is included in the source tree.
+
