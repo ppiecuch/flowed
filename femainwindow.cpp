@@ -58,7 +58,7 @@
 #include "fe_beziercurve.h"
 
 extern "C" {
-#include "nn.h"
+# include "nn.h"
 }
 
 #include "qarrowcue.h"
@@ -293,19 +293,20 @@ void FEMainWindow::loadFlowField(const QString& fname)
 
 extern "C" {
 
-/* .. Scalar Arguments ..
+/*
+      .. Scalar Arguments ..
       INTEGER          IER,MD,NDP,NXI,NYI,NEAR(NDP),NEXT(NDP)
-*     ..
-*     .. Array Arguments ..
-      DOUBLE PRECISION             WK(NDP,17),XD(NDP),XI(NXI),YD(NDP),
-     +                 YI(NYI),ZD(NDP),ZI(NXI,NYI),DIST(NDP)
-	INTEGER          IWK(NDP,25)
-	LOGICAL          EXTRPI(NXI,NYI) */
+      ..
+      .. Array Arguments ..
+      DOUBLE PRECISION WK(NDP,17),XD(NDP),XI(NXI),YD(NDP),
+                       YI(NYI),ZD(NDP),ZI(NXI,NYI),DIST(NDP)
+      INTEGER          IWK(NDP,25)
+      LOGICAL          EXTRPI(NXI,NYI)
+*/
 
 void sdsf3p_(int *MD, int *NDP, double *XD, double *YD, double *ZD, int *NXI,
 	     double *XI, int *NYI, double *YI, double *ZI, int *IER, double *WK,
-	     int *IWK, int *EXTRPI, int *NEAR_, int *NEXT, double *DIST);
-
+	     int *IWK, bool *EXTRPI, int *NEAR, int *NEXT, double *DIST);
 }
 
 QImage FEMainWindow::akimaGenerateFlowMap()
@@ -335,7 +336,7 @@ QImage FEMainWindow::akimaGenerateFlowMap()
 	int IER;
 	double *WK = new double[NDP * 17];
 	int *IWK = new int[NDP * 25];
-	int *EXTRPI = new int[NXI*NYI];
+	bool *EXTRPI = new bool[NXI*NYI];
 	int *NEAR_ = new int[NDP];
 	int *NEXT = new int[NDP];
 	double *DIST = new double[NDP];
