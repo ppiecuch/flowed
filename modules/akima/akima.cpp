@@ -10041,7 +10041,9 @@ void sdsf3p_(int *MD, int *NDP, double *XD, double *YD, double *ZD, int *NXI,
      double *XI, int *NYI, double *YI, double *ZI, int *IER, double *WK,
      int *IWK, bool *EXTRPI, int *NEAR, int *NEXT, double *DIST)
 {
-	akima::common CMN;
+	const int argc = 1;
+	const char *argv[] = { "flowed" };
+	akima::common CMN(argc, argv);
 	akima::sdsf3p( CMN, *MD, *NDP,
 		akima::arr_ref<double>(*XD),
 		akima::arr_ref<double>(*YD),
