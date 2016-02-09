@@ -1,13 +1,11 @@
-# -------------------------------------------------
-# Project created by QtCreator 2012-03-21T13:54:25
-# -------------------------------------------------
+
 QT += core \
     gui \
     widgets
-    # opengl
-# CONFIG += debug
+
 TARGET = flowed
 TEMPLATE = app
+
 SOURCES += main.cpp \
     femainwindow.cpp \
     fe_flowelement.cpp \
@@ -27,17 +25,23 @@ HEADERS += femainwindow.h \
     qarrowcue.h \
     fe_beziercurve.h
 FORMS += femainwindow.ui
-INCLUDEPATH += nn-c/
-LIBS += nn-c/libnn.a
-#     -lgfortran \
-#    -Lakima/src
-#    -lakima
-# QMAKE_CXXFLAGS += -fopenmp
-# QMAKE_LFLAGS += -fopenmp
-QMAKE_LFLAGS += /Users/sadaszewski/Downloads/akima/src/akima.new.o \
-/Users/sadaszewski/Downloads/akima/src/tripack.o \
-/opt/local/lib/gcc5/libgfortran.a
+ICONS = flowed.icns
 
+INCLUDEPATH += nn-c/
+LIBS +=
 
 RESOURCES += \
     flowed.qrc
+
+include(modules/nn-c/nn-c.pri)
+include(modules/akima/akima.pri)
+
+debug: DBG = dgb-
+else: DBG = rel-
+
+OBJECTS_DIR = workdir/$$DBG$$[QMAKE_SPEC]/obj
+MOC_DIR = workdir/$$DBG$$[QMAKE_SPEC]/ui
+UI_DIR = workdir/$$DBG$$[QMAKE_SPEC]/ui
+RCC_DIR = workdir/$$DBG$$[QMAKE_SPEC]/ui
+
+DESTDIR = bin
