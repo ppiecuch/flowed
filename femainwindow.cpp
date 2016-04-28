@@ -98,6 +98,8 @@ FEMainWindow* FEMainWindow::instance()
     return m_Instance;
 }
 
+#define PREVIEW_SIZE() QSize(100, 75)
+
 FEMainWindow::FEMainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::FEMainWindow)
@@ -154,6 +156,8 @@ FEMainWindow::FEMainWindow(QWidget *parent) :
     // glwidget->setGeometry(0, 0, 800, 600);
 
     previewBtn = ui->previewBtn;
+	previewBtn->setIconSize(PREVIEW_SIZE());
+	previewBtn->setIcon(QIcon(":res/no_image.png"));
     ui->fileBtn->setMenu(ui->menu_File);
     ui->menuBar->setVisible(false);
 
@@ -1127,7 +1131,7 @@ QImage FEMainWindow::fastGenerateFlowMap()
 void FEMainWindow::generatePreview()
 {
     QPixmap fm(QPixmap::fromImage(renderFinalImage(&FEMainWindow::fastGenerateFlowMap)));
-	previewBtn->setIconSize(QSize(100, 75));
+	previewBtn->setIconSize(PREVIEW_SIZE());
 	previewBtn->setIcon(QIcon(fm));
 	if (previewBtn->isChecked())
 		image->setPixmap(fm);

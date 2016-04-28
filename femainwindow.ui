@@ -11,18 +11,29 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Flow Editor (C) Stanislaw Adaszewski, 2012, http://algoholic.eu</string>
+   <string>Flow Editor © Stanislaw Adaszewski, 2012-2016, http://algoholic.eu</string>
   </property>
-  <widget class="QWidget" name="centralWidget">
-   <layout class="QHBoxLayout" name="horizontalLayout" stretch="1">
-    <item>
-     <widget class="QGraphicsView" name="graphicsView">
-      <property name="alignment">
-       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
-      </property>
-     </widget>
-    </item>
-   </layout>
+  <widget class="QTabWidget" name="centralWidget">
+   <property name="currentIndex">
+    <number>0</number>
+   </property>
+   <widget class="QGraphicsView" name="graphicsView">
+    <property name="alignment">
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+    </property>
+    <attribute name="title">
+     <string>Map</string>
+    </attribute>
+   </widget>
+   <widget class="QWidget" name="demoView">
+    <attribute name="title">
+     <string>Demo</string>
+    </attribute>
+    <layout class="QVBoxLayout" name="verticalLayoutDemo">
+     <item>
+     </item>
+    </layout>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
@@ -30,7 +41,7 @@
      <x>0</x>
      <y>0</y>
      <width>724</width>
-     <height>21</height>
+     <height>22</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu_File">

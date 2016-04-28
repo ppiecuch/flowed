@@ -1,5 +1,9 @@
 <RCC>
     <qresource prefix="/">
         <file>LICENSE.html</file>
+        <file>res/flowed.png</file>
+        <file>res/flowed.icns</file>
+        <file>res/emptybackground.png</file>
+        <file>res/no_image.png</file>
     </qresource>
 </RCC>

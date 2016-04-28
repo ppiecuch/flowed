@@ -25,7 +25,7 @@ HEADERS += femainwindow.h \
     qarrowcue.h \
     fe_beziercurve.h
 FORMS += femainwindow.ui
-ICON = flowed.icns
+ICON = res/flowed.icns
 
 INCLUDEPATH += nn-c/
 LIBS +=
