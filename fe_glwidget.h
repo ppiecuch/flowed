@@ -1,11 +1,11 @@
 #ifndef FE_GLWIDGET_H
 #define FE_GLWIDGET_H
 
-#include <QGLWidget>
+#include <QOpenGLWidget>
 
 class FE_Element;
 
-class FE_GLWidget : public QGLWidget
+class FE_GLWidget : public QOpenGLWidget
 {
     Q_OBJECT
 public:

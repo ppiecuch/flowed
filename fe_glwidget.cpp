@@ -5,7 +5,7 @@
 #include <QVector2D>
 
 FE_GLWidget::FE_GLWidget(QWidget *parent) :
-    QGLWidget(parent)
+    QOpenGLWidget(parent)
 {
 }
 

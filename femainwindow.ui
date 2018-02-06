@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>724</width>
-    <height>537</height>
+    <height>566</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -29,10 +29,7 @@
     <attribute name="title">
      <string>Demo</string>
     </attribute>
-    <layout class="QVBoxLayout" name="verticalLayoutDemo">
-     <item>
-     </item>
-    </layout>
+    <layout class="QVBoxLayout" name="verticalLayoutDemo"/>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
@@ -98,6 +95,12 @@
     <layout class="QVBoxLayout" name="verticalLayout_3">
      <item>
       <widget class="QPushButton" name="previewBtn">
+       <property name="minimumSize">
+        <size>
+         <width>128</width>
+         <height>128</height>
+        </size>
+       </property>
        <property name="text">
         <string/>
        </property>
